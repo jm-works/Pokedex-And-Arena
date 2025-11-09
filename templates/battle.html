@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="https://images.icon-icons.com/2248/PNG/512/pokeball_icon_136305.png">
+    <title>Arena Pokémon</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <main id="pokedex-case" style="width: 600px;">
+        <div id="pokedex-screen-area">
+            <div id="pokedex-screen" class="arena-screen">
+
+                <div id="battle-arena">
+                    <div class="pokemon-container" id="opponent-container">
+                        <div class="info-box">
+                            <span id="opponent-name">Oponente</span>
+                            <div class="health-bar-container">
+                                <div class="health-bar" id="opponent-hp-bar"></div>
+                            </div>
+                            <span class="hp-text" id="opponent-hp-text">HP: ???/???</span>
+                        </div>
+                        <img src="" alt="Opponent" id="opponent-sprite" class="pokemon-sprite" data-side="opponent">
+                    </div>
+
+                    <div class="pokemon-container" id="player-container">
+                        <img src="" alt="Player" id="player-sprite" class="pokemon-sprite" data-side="player">
+                        <div class="info-box">
+                            <span id="player-name">Jogador</span>
+                            <div class="health-bar-container">
+                                <div class="health-bar" id="player-hp-bar"></div>
+                            </div>
+                            <span class="hp-text" id="player-hp-text">HP: ???/???</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="screen-log">
+                    <p>Escolha os Pokémon abaixo...</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="pokedex-info-area">
+            <div class="battle-controls">
+                <input type="text" id="p1-input" placeholder="Seu Pokémon">
+                <span>VS</span>
+                <input type="text" id="p2-input" placeholder="Oponente">
+            </div>
+            <button id="battle-button" class="search-controls">Batalhar!</button>
+            <a href="/" class="back-link">Voltar para Pokédex</a>
+        </div>
+
+    </main>
+
+    <script src="/static/battle.js"></script>
+</body>
+
+</html>

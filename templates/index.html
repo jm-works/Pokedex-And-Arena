@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="https://images.icon-icons.com/2248/PNG/512/pokeball_icon_136305.png">
+    <title>Pokédex Web</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+
+    <main id="pokedex-case">
+        <div id="pokedex-screen-area">
+            <div id="pokedex-screen">
+
+                <div id="pokemon-name-id">
+                    <h2 id="pokemon-name">Pokédex</h2>
+                    <span id="pokemon-id">#???</span>
+                </div>
+
+                <div id="image-container">
+                    <img id="pokemon-image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/132.svg" alt="Pokémon">
+
+                    <button id="shiny-button" class="shiny-toggle-button" style="display: none;">
+                        ✨ Alternar Shiny
+                    </button>
+                </div>
+
+                <p id="pokemon-description">Digite o nome ou ID de um Pokémon e clique em 'Buscar'.</p>
+
+            </div>
+        </div>
+
+        <div id="pokedex-info-area">
+
+            <div class="search-controls">
+                <input type="text" id="pokemon-input" placeholder="Nome ou Nº do Pokémon">
+                <button id="search-button">Buscar</button>
+            </div>
+
+            <div class="data-grid">
+
+                <div class="data-box">
+                    <h3>Info</h3>
+                    <p><strong>Tipo(s):</strong> <span id="pokemon-types">---</span></p>
+                    <p><strong>Habilidades:</strong> <span id="pokemon-abilities">---</span></p>
+
+                    <h3>Estatísticas Base</h3>
+                    <ul id="pokemon-stats">
+                        <li>- HP: ---</li>
+                        <li>- Attack: ---</li>
+                        <li>- Defense: ---</li>
+                    </ul>
+                </div>
+
+                <div class="data-box">
+                    <h3>Info. Adicional</h3>
+                    <p><strong>Crescimento (Level):</strong> <span id="pokemon-growth">---</span></p>
+                    <p><strong>Taxa de Captura:</strong> <span id="pokemon-capture">---</span></p>
+                    <p><strong>Gênero:</strong> <span id="pokemon-gender">---</span></p>
+                    <p><strong>Grupos de Ovo:</strong> <span id="pokemon-egg-groups">---</span></p>
+
+                    <h3>Build (EVs Ganhos)</h3>
+                    <p id="pokemon-evs">---</p>
+                </div>
+
+            </div> <a href="/battle" class="back-link" style="font-size: 1.2em;">
+                Ir para a Arena de Batalha!
+            </a>
+
+        </div>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
