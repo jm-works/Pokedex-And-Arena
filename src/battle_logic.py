@@ -171,9 +171,13 @@ def simulate_battle(fighter1, fighter2):
         defender["currentHp"] = max(0, defender["currentHp"] - damage)
 
         log.append(f"Causou {damage} de dano.")
-        log.append(
-            f"{defender['name']} tem {defender['currentHp']}/{defender['maxHp']} HP restante."
-        )
+
+        hp_log = f"{defender['name']} tem {defender['currentHp']}/{defender['maxHp']} HP restante."
+
+        if defender is fighter1:
+            log.append(f"[PLAYER_HP] {hp_log}")
+        else:  # Só pode ser o fighter2
+            log.append(f"[OPPONENT_HP] {hp_log}")
 
         if defender["currentHp"] <= 0:
             log.append(f"{defender['name']} desmaiou!")

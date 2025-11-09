@@ -151,10 +151,13 @@ document.addEventListener('DOMContentLoaded', () => {
         battle_log.innerHTML = ''; 
 
         for (const line of logLines) {
-            logMessage(line);
+            
+            let message = line;
 
-            if (line.includes("HP restante")) {
-                let matchPlayer = line.match(new RegExp(`${player.name} tem (\\d+)/(\\d+) HP`));
+            if (line.startsWith("[PLAYER_HP]")) {
+                message = line.replace("[PLAYER_HP] ", "");
+                
+                let matchPlayer = message.match(new RegExp(`${player.name} tem (\\d+)/(\\d+) HP`));
                 if (matchPlayer) {
                     const currentHp = parseInt(matchPlayer[1]);
                     const maxHp = parseInt(matchPlayer[2]);
@@ -165,8 +168,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     playerSprite.classList.add('hit');
                     setTimeout(() => playerSprite.classList.remove('hit'), 300);
                 }
+
+            } else if (line.startsWith("[OPPONENT_HP]")) {
+                message = line.replace("[OPPONENT_HP] ", "");
                 
-                let matchOpponent = line.match(new RegExp(`${opponent.name} tem (\\d+)/(\\d+) HP`));
+                let matchOpponent = message.match(new RegExp(`${opponent.name} tem (\\d+)/(\\d+) HP`));
                 if (matchOpponent) {
                     const currentHp = parseInt(matchOpponent[1]);
                     const maxHp = parseInt(matchOpponent[2]);
@@ -178,6 +184,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     setTimeout(() => opponentSprite.classList.remove('hit'), 300);
                 }
             }
+            
+            logMessage(message);
+            
             await new Promise(resolve => setTimeout(resolve, 1000));
         }
     }
