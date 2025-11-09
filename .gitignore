@@ -10,3 +10,4 @@ env/
 
 # Arquivos de Sistema
 .DS_Store
+/src/__pycache__
